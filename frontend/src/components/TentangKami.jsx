@@ -1,24 +1,30 @@
+import { Link } from "react-router-dom";
+
 export default function TentangKami() {
   const programs = [
     {
       title: "Minds Check",
-      desc: "Kenali Kondisi Kesehatan Mental Anda Lakukan analisis mandiri melalui asesmen komprehensif yang dirancang untuk membantu Anda memahami berbagai aspek kesejahteraan mental.",
+      desc: "Kenali Kondisi Kesehatan Mental Anda...",
       icon: "ri-mental-health-line",
+      link: "/mindscheck",
     },
     {
       title: "Minds Talks",
-      desc: "Mindstalk adalah ruang berbagi cerita dan edukasi seputar kesehatan mental dan pengembangan diri yang disampaikan secara ringan, relevan, dan mudah dipahami.",
+      desc: "Mindstalk adalah ruang berbagi cerita...",
       icon: "ri-megaphone-line",
+      link: "/minds-talks",
     },
     {
       title: "Donasi",
-      desc: "Dukungan donasimu membantu MindsUnited menyediakan edukasi, ruang aman, dan program kesehatan mental yang dapat diakses oleh lebih banyak anak muda di seluruh Indonesia.",
+      desc: "Dukungan donasimu membantu berbagai program di MindsUnited.",
       icon: "ri-hand-coin-line",
+      link: "/donasi",
     },
     {
       title: "Brand Ambassador",
-      desc: "Kami mencari individu yang memiliki komitmen terhadap pengembangan diri dan kesehatan mental, keterampilan komunikasi yang baik, serta pemahaman tentang target audiens kami (Gen-Z dan milenial).",
+      desc: "Mencari individu dengan komitmen terhadap edukasi kesehatan mental.",
       icon: "ri-team-line",
+      link: "/brand-ambassador",
     },
   ];
 
@@ -31,23 +37,20 @@ export default function TentangKami() {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-12">
         {programs.map((item, index) => (
           <div key={index} className="flex flex-col items-center">
-            {/* Icon CDN */}
-            <i className={`${item.icon} text-secondary text-6xl mb-4`}></i>
+            <i className={`${item.icon} text-secondary text-6xl mb-4`} />
 
-            <h3 className="text-xl font-bold text-primary mb-2">
-              {item.title}
-            </h3>
+            <h3 className="text-xl font-bold text-primary mb-2">{item.title}</h3>
 
             <p className="text-gray-600 leading-relaxed flex-1">{item.desc}</p>
 
             <hr className="my-4" />
 
-            <a
-              href="#"
-              className="text-sm font-semibold text-primary hover:text-primary2 gap-1"
+            <Link
+              to={item.link}
+              className="text-sm font-semibold text-primary hover:text-primary2"
             >
               DETAIL PROGRAM →
-            </a>
+            </Link>
           </div>
         ))}
       </div>

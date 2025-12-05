@@ -1,0 +1,61 @@
+export const questions = [
+  // PAGE 1
+  "Saya mampu mengenali perasaan saya dengan baik.",
+  "Saya dapat mengekspresikan emosi saya dengan cara yang sehat.",
+  "Saya mampu mengendalikan diri saat marah atau kecewa.",
+  "Saya merasa percaya diri dalam berbagai situasi.",
+  "Saya merasa puas dengan diri saya sendiri.",
+  "Saya merasa bersemangat menjalani hari-hari saya.",
+  "Saya jarang merasa putus asa.",
+  "Saya mudah beradaptasi dengan perubahan.",
+  "Saya khawatir berlebihan tentang hal-hal kecil.",
+  "Saya mengalami kesulitan untuk rileks.",
+
+  // PAGE 2 (11–20)
+  "Saya merasa mudah lelah secara emosional.",
+  "Saya sering merasa cemas tanpa alasan yang jelas.",
+  "Saya merasa kehidupan saya tidak seimbang.",
+  "Saya sulit tidur karena banyak pikiran.",
+  "Saya sulit fokus pada hal yang sedang saya kerjakan.",
+  "Saya sering merasa kesepian.",
+  "Saya merasa tidak memiliki tujuan hidup.",
+  "Saya kehilangan minat pada hal-hal yang biasanya saya sukai.",
+  "Saya merasa hidup terlalu berat dijalani.",
+  "Saya merasa tidak berharga.",
+
+  // PAGE 3 (21–30)
+  "Saya sulit mengatur waktu dengan baik.",
+  "Saya mudah tersinggung.",
+  "Saya sering merasa tidak tenang.",
+  "Saya sulit membuat keputusan.",
+  "Saya sering menunda pekerjaan.",
+  "Saya merasa hubungan saya dengan orang lain baik.",
+  "Saya merasa bisa mengatasi masalah dengan baik.",
+  "Saya memiliki kontrol atas hidup saya.",
+  "Saya merasa puas dengan hubungan sosial saya.",
+  "Saya merasa dihargai oleh orang lain.",
+
+  // PAGE 4 (31–40)
+  "Saya merasa aman dalam lingkungan saya.",
+  "Saya merasa hidup saya penuh tekanan.",
+  "Saya merasa tidak mampu menyelesaikan masalah.",
+  "Saya merasa terlalu banyak beban.",
+  "Saya merasa tidak punya energi.",
+  "Saya merasa tidak produktif.",
+  "Saya merasa terisolasi dari orang lain.",
+  "Saya sulit menjalani rutinitas harian.",
+  "Saya tidak yakin dengan masa depan saya.",
+  "Saya merasa tidak punya arah hidup.",
+
+  // PAGE 5 (41–50)
+  "Saya merasa sering kehilangan kendali atas emosi saya.",
+  "Saya merasa tidak bahagia.",
+  "Saya mudah stres.",
+  "Saya mudah takut.",
+  "Saya sulit menenangkan pikiran.",
+  "Saya merasa tidak didukung oleh orang sekitar.",
+  "Saya sulit mempercayai orang lain.",
+  "Saya sering merasa tertekan.",
+  "Saya sering merasa bersalah.",
+  "Saya merasa hidup saya tidak berarti.",
+];

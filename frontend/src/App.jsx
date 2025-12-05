@@ -8,6 +8,8 @@ import Testimoni from "./components/AboutMe";
 import Footer from "./components/Footer";
 import NilaiKomunitas from "./components/NilaiKomunitas";
 import AboutMe from "./components/AboutMe";
+import Mindscheck from "./page/mindcheck";
+import Assesment from "./page/Assesment";
 
 function App() {
   return (
@@ -25,6 +27,8 @@ function App() {
           </div>
         }
       />
+      <Route path="/mindscheck" element={<Mindscheck />} />
+      <Route path="/assesment" element={<Assesment />} />
     </Routes>
   );
 }
