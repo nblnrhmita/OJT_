@@ -6,42 +6,42 @@ const berita = [
     judul: "Pena Guru, Cahaya Bangsa",
     deskripsi:
       "Goresan yang Mengubah Arah Hidup Di balik setiap keberhasilan anak bangsa, ada peran guru yang [...]",
-    gambar: "/img/berita1.jpg",
+    gambar: "https://i.pinimg.com/1200x/b8/d3/20/b8d320b824bae05298e03e66e7f1e41a.jpg",
   },
   {
     tanggal: "Agustus 25, 2025",
     judul: "Pena Guru, Cahaya Bangsa",
     deskripsi:
       "Goresan yang Mengubah Arah Hidup Di balik setiap keberhasilan anak bangsa, ada peran guru yang [...]",
-    gambar: "/img/berita1.jpg",
+    gambar: "https://i.pinimg.com/736x/27/9e/ee/279eeeb94a52e9146a06e7cb32c06fc3.jpg",
   },
   {
     tanggal: "Agustus 25, 2025",
     judul: "Pena Guru, Cahaya Bangsa",
     deskripsi:
       "Goresan yang Mengubah Arah Hidup Di balik setiap keberhasilan anak bangsa, ada peran guru yang [...]",
-    gambar: "/img/berita1.jpg",
+    gambar: "https://i.pinimg.com/736x/a1/a3/b0/a1a3b09863e8ad92aa6aab6643d667a0.jpg",
   },
   {
     tanggal: "Agustus 25, 2025",
     judul: "Pena Guru, Cahaya Bangsa",
     deskripsi:
       "Goresan yang Mengubah Arah Hidup Di balik setiap keberhasilan anak bangsa, ada peran guru yang [...]",
-    gambar: "/img/berita1.jpg",
+    gambar: "https://i.pinimg.com/736x/8e/31/20/8e31206604cc29706c580022890d09b3.jpg",
   },
   {
     tanggal: "Agustus 25, 2025",
     judul: "Pena Guru, Cahaya Bangsa",
     deskripsi:
       "Goresan yang Mengubah Arah Hidup Di balik setiap keberhasilan anak bangsa, ada peran guru yang [...]",
-    gambar: "/img/berita1.jpg",
+    gambar: "https://i.pinimg.com/736x/b9/77/04/b977045032820f7d5ab7e204db0b39aa.jpg",
   },
   {
     tanggal: "Agustus 25, 2025",
     judul: "Pena Guru, Cahaya Bangsa",
     deskripsi:
       "Goresan yang Mengubah Arah Hidup Di balik setiap keberhasilan anak bangsa, ada peran guru yang [...]",
-    gambar: "/img/berita1.jpg",
+    gambar: "https://i.pinimg.com/736x/37/69/71/3769719a5cb3bb49d41a6225d15b4084.jpg",
   },
 ];
 
