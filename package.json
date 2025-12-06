@@ -1,0 +1,32 @@
+{
+  "name": "ojt_",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "start:frontend": "cd app/frontend && bun run dev",
+    "start:backend": "cd app/backend/src && bun --watch index.js",
+    "start": "concurrently \"bun run start:frontend\" \"bun run start:backend\""
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "concurrently": "^9.2.1"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "axios": "^1.13.2",
+    "backend": "./app/backend/",
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.5",
+    "express": "^5.2.1",
+    "from": "^0.1.7",
+    "frontend": "./app/frontend/",
+    "import": "^0.0.6",
+    "jsonwebtoken": "^9.0.3",
+    "lucide-react": "^0.556.0",
+    "mysql2": "^3.15.3",
+    "react-toastify": "^11.0.5"
+  }
+}
