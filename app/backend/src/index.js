@@ -1,5 +1,7 @@
+require("dotenv").config();
 import express from "express";
 import cors from "cors";
+import dotenv from "dotenv";
 
 const app = express();
 const port = 3000;
@@ -7,6 +9,7 @@ const port = 3000;
 // Middleware
 app.use(cors());
 app.use(express.json());
+dotenv.config();
 
 // Importing the auth router
 import { router as authRouter } from "./modules/auth/auth.route.js";

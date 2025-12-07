@@ -4,52 +4,64 @@ export default function TentangKami() {
   const programs = [
     {
       title: "Minds Check",
-      desc: "Kenali Kondisi Kesehatan Mental Anda...",
+      desc: "Kenali kondisi kesehatan mental Anda melalui asesmen komprehensif untuk memahami kesejahteraan mental.",
       icon: "ri-mental-health-line",
       link: "/mindscheck",
     },
     {
       title: "Minds Talks",
-      desc: "Mindstalk adalah ruang berbagi cerita...",
+      desc: "Ruang berbagi cerita, berdiskusi, dan mendapatkan dukungan dari komunitas positif.",
       icon: "ri-megaphone-line",
       link: "/minds-talks",
     },
     {
       title: "Donasi",
-      desc: "Dukungan donasimu membantu berbagai program di MindsUnited.",
+      desc: "Dukungan Anda membantu menjalankan berbagai program kesehatan mental di MindsUnited.",
       icon: "ri-hand-coin-line",
-      link: "/donasi",
+      link: "https://l.instagram.com/?u=https%3A%2F%2Flynk.id%2Fmindsunited%3Futm_source%3Dig%26utm_medium%3Dsocial%26utm_content%3Dlink_in_bio%26fbclid%3DPAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGnvvEf64omenzkv6zbiF1yjx8HBMv4kGPwTLkFziyRikD8H4RnzjvnxbdQEsw_aem_paLf6VWen0I0OCLyzQErrA&e=AT1jl4LyHEyX8K1pQB-TvEK3KtnoxtWK_B-Tam6JlAJcc8Ks90T9LmeiLItNzzV3WNmySqNPzKEbmcHAtw0bE99fPhhc49pTiRLWLYwfHg",
     },
     {
       title: "Brand Ambassador",
-      desc: "Mencari individu dengan komitmen terhadap edukasi kesehatan mental.",
+      desc: "Mencari individu yang berkomitmen dalam edukasi kesehatan mental dan siap menjadi representatif MindsUnited.",
       icon: "ri-team-line",
       link: "/brand-ambassador",
     },
   ];
 
   return (
-    <div className="bg-white py-16 px-6 lg:px-30">
-      <h2 className="text-3xl font-bold text-center text-primary mb-12">
-        Tentang Kami
+    <div className="py-20 px-6 lg:px-28 bg-gradient-to-b from-white to-secondary/10">
+      {/* TITLE */}
+      <h2 className="text-4xl font-bold text-center text-primary mb-14">
+        Program Kami
       </h2>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-12">
+      {/* GRID */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-10">
         {programs.map((item, index) => (
-          <div key={index} className="flex flex-col items-center">
-            <i className={`${item.icon} text-secondary text-6xl mb-4`} />
+          <div
+            key={index}
+            className="bg-white border border-gray-100 rounded-2xl p-8 shadow-md
+                       hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+          >
+            {/* ICON */}
+            <div className="w-16 h-16 flex items-center justify-center rounded-xl bg-secondary/20 mb-6">
+              <i className={`${item.icon} text-secondary text-4xl`} />
+            </div>
 
-            <h3 className="text-xl font-bold text-primary mb-2">{item.title}</h3>
+            {/* TITLE */}
+            <h3 className="text-2xl font-bold text-primary mb-3">
+              {item.title}
+            </h3>
 
-            <p className="text-gray-600 leading-relaxed flex-1">{item.desc}</p>
+            {/* DESC */}
+            <p className="text-gray-600 leading-relaxed mb-6">{item.desc}</p>
 
-            <hr className="my-4" />
-
+            {/* CTA */}
             <Link
               to={item.link}
-              className="text-sm font-semibold text-primary hover:text-primary2"
+              className="inline-block text-sm font-semibold text-primary hover:text-secondary transition-colors"
             >
-              DETAIL PROGRAM →
+              Detail Program →
             </Link>
           </div>
         ))}

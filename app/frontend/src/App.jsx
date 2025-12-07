@@ -5,6 +5,7 @@ import Assesment from "./page/Assesment";
 import Index from "./page/Index";
 import Login from "./page/Login";
 import Register from "./page/Register";
+import Results from "./page/Results";
 import { ToastContainer } from "react-toastify";
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
         <Route path="/" element={<Index />} />
         <Route path="/mindscheck" element={<Mindscheck />} />
         <Route path="/assesment" element={<Assesment />} />
+        <Route path="/results" element={<Results />} />
         {/* auth */}
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />

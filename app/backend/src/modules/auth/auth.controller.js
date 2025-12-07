@@ -100,7 +100,9 @@ export async function login(req, res) {
         username: user.username,
         email: user.email,
       };
-      return jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: "1h" });
+      return jwt.sign(payload, "Rahasia", {
+        expiresIn: "1h",
+      });
     };
 
     res.status(200).json({

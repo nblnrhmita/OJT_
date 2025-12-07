@@ -62,9 +62,9 @@ export default function Navbar() {
 
   const navigation = [
     { name: "Home", href: "/" },
-    { name: "Tentang Kami", href: "/about" },
-    { name: "Program", href: "/program" },
-    { name: "Artikel", href: "/articles" },
+    { name: "Tentang Kami", href: "/" },
+    { name: "Program", href: "/" },
+    { name: "Artikel", href: "/" },
   ];
 
   return (
@@ -82,7 +82,7 @@ export default function Navbar() {
                   className="h-10 w-10 md:h-12 md:w-12 rounded-full border-2 border-primary/10"
                 />
                 <span className="text-xl font-bold bg-gradient-to-r from-primary to-cyan-600 bg-clip-text text-transparent">
-                  EduConnect
+                  Minds United
                 </span>
               </Link>
             </div>
@@ -209,7 +209,7 @@ export default function Navbar() {
                       className="h-10 w-10 rounded-full"
                     />
                     <span className="text-lg font-bold text-primary">
-                      EduConnect
+                      Minds United
                     </span>
                   </Link>
                   <button

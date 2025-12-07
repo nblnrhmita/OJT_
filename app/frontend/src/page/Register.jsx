@@ -1,92 +1,163 @@
+import axios from "axios";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import { EyeIcon, EyeSlashIcon } from "@heroicons/react/24/outline";
+
 export default function Register() {
+  const navigate = useNavigate();
+
+  const [form, setForm] = useState({
+    username: "",
+    email: "",
+    password: "",
+  });
+
+  const [loading, setLoading] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+
+  const handleRegister = async (e) => {
+    e.preventDefault();
+
+    if (!form.username || !form.email || !form.password) {
+      toast.error("Semua field harus diisi!");
+      return;
+    }
+
+    setLoading(true);
+
+    try {
+      const response = await axios.post(
+        `${import.meta.env.VITE_API_URL}/auth/register`,
+        form
+      );
+
+      if (response.data.success) {
+        toast.success("Registrasi berhasil!");
+        navigate("/login");
+      } else {
+        toast.error(response.data.message || "Registrasi gagal");
+      }
+    } catch (error) {
+      toast.error(
+        error.response?.data?.message ||
+          error.message ||
+          "Terjadi kesalahan server"
+      );
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
-    <>
-      <div class="min-h-screen flex fle-col items-center justify-center">
-        <div class="py-6 px-4">
-          <div class="grid lg:grid-cols-2 items-center gap-6 max-w-6xl w-full">
-            <div class="border border-slate-300 rounded-lg p-6 max-w-md shadow-[0_2px_22px_-4px_rgba(93,96,127,0.2)] max-lg:mx-auto">
-              <form class="space-y-6">
-                <div class="mb-12">
-                  <h1 class="text-slate-900 text-3xl font-semibold">Sign Up</h1>
-                  <p class="text-slate-600 text-[15px] mt-6 leading-relaxed">
-                    Sign up to your account and explore a world of
-                    possibilities. Your journey begins here.
-                  </p>
-                </div>
-
-                <div class="mb-4">
-                  <label class="text-slate-900 text-sm font-medium mb-2 block">
-                    Username
-                  </label>
-                  <div class="relative flex items-center">
-                    <input
-                      name="username"
-                      type="text"
-                      required
-                      class="w-full text-sm text-slate-900 border border-slate-300 pl-4 pr-10 py-3 rounded-lg outline-blue-600"
-                      placeholder="Enter username"
-                    />
-                  </div>
-                </div>
-                <div>
-                  <label class="text-slate-900 text-sm font-medium mb-2 block">
-                    Email
-                  </label>
-                  <div class="relative flex items-center">
-                    <input
-                      name="email"
-                      type="text"
-                      required
-                      class="w-full text-sm text-slate-900 border border-slate-300 pl-4 pr-10 py-3 rounded-lg outline-blue-600"
-                      placeholder="Enter user name"
-                    />
-                  </div>
-                </div>
-                <div>
-                  <label class="text-slate-900 text-sm font-medium mb-2 block">
-                    Password
-                  </label>
-                  <div class="relative flex items-center">
-                    <input
-                      name="password"
-                      type="password"
-                      required
-                      class="w-full text-sm text-slate-900 border border-slate-300 pl-4 pr-10 py-3 rounded-lg outline-blue-600"
-                      placeholder="Enter password"
-                    />
-                  </div>
-                </div>
-
-                <div class="mt-12">
-                  <button
-                    type="button"
-                    class="w-full shadow-xl py-2.5 px-4 text-[15px] font-medium tracking-wide rounded-lg text-white bg-blue-600 hover:bg-blue-700 focus:outline-none cursor-pointer"
-                  >
-                    Sign up
-                  </button>
-                  <p class="text-sm mt-6 text-center text-slate-600">
-                    Have an account{" "}
-                    <a
-                      href="/login"
-                      class="text-blue-600 font-medium hover:underline ml-1 whitespace-nowrap"
-                    >
-                      Login here
-                    </a>
-                  </p>
-                </div>
-              </form>
+    <div className="min-h-screen flex items-center justify-center px-4 bg-white">
+      <div className="grid lg:grid-cols-2 gap-2 max-w-4xl w-full items-center">
+        {/* CARD REGISTER */}
+        <div className="border border-slate-300 rounded-lg p-8 max-w-md w-full shadow-[0_2px_22px_-4px_rgba(93,96,127,0.16)] bg-white mx-auto">
+          <form className="space-y-6" onSubmit={handleRegister}>
+            <div className="mb-8">
+              <h1 className="text-slate-900 text-3xl font-semibold">
+                Register
+              </h1>
+              <p className="text-slate-600 text-sm mt-3 leading-relaxed">
+                Create your account and start your journey with us.
+              </p>
             </div>
 
-            <div class="max-lg:mt-8">
-              <img
-                src="https://readymadeui.com/login-image.webp"
-                class="w-full aspect-71/50 max-lg:w-4/5 mx-auto block object-cover"
-                alt="login img"
+            {/* USERNAME */}
+            <div>
+              <label className="text-slate-900 text-sm font-medium mb-2 block">
+                Username
+              </label>
+              <input
+                type="text"
+                required
+                value={form.username}
+                onChange={(e) => setForm({ ...form, username: e.target.value })}
+                disabled={loading}
+                className="w-full text-sm border border-slate-300 px-4 py-3 rounded-lg outline-blue-600"
+                placeholder="Enter your username"
               />
             </div>
-          </div>
+
+            {/* EMAIL */}
+            <div>
+              <label className="text-slate-900 text-sm font-medium mb-2 block">
+                Email
+              </label>
+              <input
+                type="email"
+                required
+                value={form.email}
+                onChange={(e) => setForm({ ...form, email: e.target.value })}
+                disabled={loading}
+                className="w-full text-sm border border-slate-300 px-4 py-3 rounded-lg outline-blue-600"
+                placeholder="Enter your email"
+              />
+            </div>
+
+            {/* PASSWORD */}
+            <div>
+              <label className="text-slate-900 text-sm font-medium mb-2 block">
+                Password
+              </label>
+              <div className="relative">
+                <input
+                  type={showPassword ? "text" : "password"}
+                  required
+                  value={form.password}
+                  onChange={(e) =>
+                    setForm({ ...form, password: e.target.value })
+                  }
+                  disabled={loading}
+                  className="w-full text-sm border border-slate-300 pl-4 pr-10 py-3 rounded-lg outline-blue-600"
+                  placeholder="Enter password"
+                />
+
+                <button
+                  type="button"
+                  onClick={() => setShowPassword(!showPassword)}
+                  className="absolute right-3 top-3 text-slate-500 hover:text-slate-700"
+                >
+                  {showPassword ? (
+                    <EyeSlashIcon className="h-5 w-5" />
+                  ) : (
+                    <EyeIcon className="h-5 w-5" />
+                  )}
+                </button>
+              </div>
+            </div>
+
+            {/* BUTTON */}
+            <button
+              type="submit"
+              disabled={loading}
+              className="w-full py-3 rounded-lg font-medium text-white bg-primary hover:bg-teal-500 disabled:opacity-50"
+            >
+              {loading ? "Processing..." : "Register"}
+            </button>
+
+            <p className="text-sm text-center mt-4 text-slate-600">
+              Already have an account?
+              <a
+                href="/login"
+                className="text-primary font-medium hover:underline ml-1"
+              >
+                Login
+              </a>
+            </p>
+          </form>
+        </div>
+
+        {/* GAMBAR */}
+        <div className="hidden lg:flex justify-center items-center">
+          <img
+            src="logo-about.jpg"
+            className="w-96 rounded-lg object-cover"
+            alt="register visual"
+          />
         </div>
       </div>
-    </>
+    </div>
   );
 }

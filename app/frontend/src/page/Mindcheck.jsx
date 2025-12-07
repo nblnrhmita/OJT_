@@ -1,7 +1,9 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 import { toast } from "react-toastify";
+
 import {
   Brain,
   Shield,
@@ -15,18 +17,17 @@ import {
 } from "lucide-react";
 
 export default function Mindscheck() {
-  // Popup State
   const [selected, setSelected] = React.useState(null);
   const [checked, setChecked] = React.useState(false);
   const navigate = useNavigate();
 
+  // Cek token dari localStorage
   useEffect(() => {
     const token = localStorage.getItem("token");
-    if (token) {
-      setChecked(true);
-    }
+    if (token) setChecked(true);
   }, []);
 
+  // Data Aspek
   const aspekList = [
     "Kesejahteraan Emosional",
     "Tingkat Kecemasan",
@@ -50,38 +51,41 @@ export default function Mindscheck() {
     },
   };
 
+  // Feature Cards
   const features = [
     {
       icon: Brain,
       title: "50 Pertanyaan Komprehensif",
       description:
-        "Asesmen berbasis skala Likert yang mencakup 7 aspek kesehatan mental",
+        "Asesmen berbasis skala Likert mencakup 7 aspek kesehatan mental.",
     },
     {
       icon: Clock,
       title: "Waktu 10-15 Menit",
-      description: "Proses yang terstruktur dan mudah diikuti",
+      description: "Proses yang terstruktur dan mudah diikuti.",
     },
     {
       icon: BarChart3,
       title: "Visualisasi Spider Chart",
-      description: "Hasil ditampilkan dalam grafik yang mudah dipahami",
+      description: "Hasil ditampilkan dalam grafik yang mudah dipahami.",
     },
     {
       icon: FileText,
       title: "Laporan Lengkap",
-      description: "Unduh hasil analisa dalam format PDF",
+      description: "Unduh hasil analisa dalam format PDF.",
     },
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 pb-20">
-      {/* Header Section */}
+    <div className="min-h-screen bg-white">
+      {/* ======================= NAVBAR ======================= */}
       <Navbar />
-      <div className="text-center pt-20 max-w-4xl mx-auto">
-        <h1 className="text-4xl font-bold text-gray-800 leading-tight">
-          Kenali Kondisi{" "}
-          <span className="text-emerald-600">Kesehatan Mental</span> Anda
+
+      {/* ======================= HERO ======================= */}
+      <div className="text-center pt-20 max-w-4xl mx-auto px-4">
+        <h1 className="text-4xl font-bold text-gray-800">
+          Kenali Kondisi <span className="text-primary">Kesehatan Mental</span>{" "}
+          Anda
         </h1>
         <p className="mt-4 text-gray-600">
           Lakukan analisis mandiri melalui asesmen komprehensif untuk memahami
@@ -89,28 +93,28 @@ export default function Mindscheck() {
         </p>
       </div>
 
-      {/* Feature Cards */}
-      <div className="animate-fade-up delay-300 grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+      {/* ======================= FEATURE CARDS ======================= */}
+      <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-5 mt-14 px-4">
         {features.map((feature, index) => (
           <div
             key={index}
-            className="rounded-xl border border-border bg-card p-4 shadow-soft hover:shadow-card transition-all duration-300"
+            className="rounded-2xl bg-white p-5 border shadow-sm hover:shadow-md transition"
           >
             <feature.icon className="h-8 w-8 text-primary mx-auto mb-3" />
-            <h3 className="font-semibold text-sm text-foreground mb-1">
+            <h3 className="text-sm font-semibold text-gray-800 text-center">
               {feature.title}
             </h3>
-            <p className="text-xs text-muted-foreground">
+            <p className="text-xs text-gray-600 text-center mt-1">
               {feature.description}
             </p>
           </div>
         ))}
       </div>
 
-      {/* Aspek Section */}
-      <div className="w-full flex justify-center mt-20">
-        <div className="bg-white shadow-xl rounded-3xl p-10 max-w-4xl text-center">
-          <h2 className="text-2xl font-bold text-gray-800">
+      {/* ======================= ASPEK SECTION ======================= */}
+      <div className="w-full flex justify-center mt-20 px-4">
+        <div className="bg-white shadow-xl rounded-3xl p-10 max-w-4xl w-full text-center">
+          <h2 className="text-2xl font-bold text-primary">
             7 Aspek yang Dianalisis
           </h2>
           <p className="text-gray-500 mt-2 text-sm">
@@ -122,7 +126,7 @@ export default function Mindscheck() {
               <button
                 key={item}
                 onClick={() => setSelected(item)}
-                className="px-5 py-2 bg-emerald-50 text-emerald-700 rounded-full text-sm hover:bg-emerald-100 transition"
+                className="px-5 py-2 bg-emerald-50 text-primary rounded-full text-sm hover:bg-emerald-100 transition"
               >
                 {item}
               </button>
@@ -131,35 +135,36 @@ export default function Mindscheck() {
         </div>
       </div>
 
-      {/* Disclaimer */}
-      <div className="max-w-4xl mx-auto bg-amber-50 border border-amber-200 rounded-2xl p-8 mt-20 shadow-sm">
+      {/* ======================= DISCLAIMER ======================= */}
+      <div className="max-w-4xl mx-auto bg-amber-50 border border-amber-200 rounded-2xl p-8 mt-20 shadow-sm px-4">
         <h3 className="text-lg font-semibold text-gray-800 flex items-center gap-2 mb-4">
           <span className="text-amber-500 text-2xl">⚠️</span>
           Penting untuk Diketahui
         </h3>
+
         <ul className="text-gray-700 text-sm space-y-2 ml-6 list-disc">
           <li>
             Asesmen ini bersifat <span className="font-semibold">edukatif</span>{" "}
             dan <span className="font-semibold">bukan diagnosis medis</span>.
           </li>
           <li>
-            Hasil tidak dapat menggantikan konsultasi dengan profesional
-            kesehatan mental.
+            Hasil tidak dapat menggantikan konsultasi profesional kesehatan
+            mental.
           </li>
           <li>
             Jika Anda mengalami kondisi darurat, segera hubungi layanan
             kesehatan profesional.
           </li>
           <li>
-            Data jawaban Anda hanya diproses di perangkat dan tidak disimpan di
+            Jawaban Anda hanya diproses di perangkat dan tidak disimpan di
             server.
           </li>
         </ul>
       </div>
 
-      {/* Start Section */}
-      <div className="max-w-3xl mx-auto bg-white rounded-3xl shadow-lg p-10 mt-10 text-center">
-        <h2 className="text-2xl font-bold text-gray-800 mb-2">Siap Memulai?</h2>
+      {/* ======================= START BUTTON ======================= */}
+      <div className="max-w-3xl mx-auto bg-white rounded-3xl shadow-lg p-10 mt-10 text-center px-4">
+        <h2 className="text-2xl font-bold text-primary mb-2">Siap Memulai?</h2>
         <p className="text-gray-600 mb-6">
           Pastikan Anda berada di tempat yang nyaman dan memiliki waktu sekitar
           10–15 menit untuk menyelesaikan asesmen ini.
@@ -174,8 +179,7 @@ export default function Mindscheck() {
           />
           <p className="text-gray-700 text-sm">
             Saya memahami bahwa asesmen ini bersifat edukatif, bukan diagnosis
-            medis, dan saya siap untuk melakukan analisa kesehatan mental secara
-            mandiri.
+            medis.
           </p>
         </div>
 
@@ -185,20 +189,12 @@ export default function Mindscheck() {
             if (token) {
               checked && navigate("/Assesment");
             } else {
-              toast.error("Harap login terlebih dahulu!", {
-                position: "top-right",
-                autoClose: 2000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-              });
+              toast.error("Harap login terlebih dahulu!");
             }
           }}
           className={`mt-8 px-8 py-3 rounded-xl text-white font-semibold shadow-md transition ${
             checked
-              ? "bg-emerald-600 hover:bg-emerald-700"
+              ? "bg-primary hover:bg-teal-500"
               : "bg-gray-300 cursor-not-allowed"
           }`}
         >
@@ -215,14 +211,10 @@ export default function Mindscheck() {
         )}
       </div>
 
-      <footer className="w-full bg-gray-50 mt-10 py-3">
-        <p className="text-center text-gray-500 text-sm">
-          © 2024 <span className="font-medium text-gray-600">MindCheck</span>.
-          Website ini tidak menggantikan profesional kesehatan mental.
-        </p>
-      </footer>
+      {/* ======================= FOOTER ======================= */}
+      <Footer />
 
-      {/* Popup */}
+      {/* ======================= POPUP ASPEK ======================= */}
       {selected && (
         <div className="fixed inset-0 bg-black bg-opacity-40 flex justify-center items-center z-50 p-4">
           <div className="bg-white rounded-2xl shadow-xl max-w-xl w-full p-8 relative overflow-y-auto max-h-[90vh]">
@@ -247,9 +239,7 @@ export default function Mindscheck() {
               </p>
             </div>
 
-            <h4 className="font-semibold text-gray-800 mb-2">
-              Indikator yang Diukur:
-            </h4>
+            <h4 className="font-semibold text-gray-800 mb-2">Indikator:</h4>
             <ul className="list-disc ml-6 text-gray-600 text-sm space-y-1">
               {detailData[selected]?.indikator.map((i) => (
                 <li key={i}>{i}</li>

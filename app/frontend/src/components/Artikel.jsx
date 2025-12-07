@@ -3,85 +3,102 @@ import React from "react";
 const berita = [
   {
     tanggal: "Agustus 25, 2025",
-    judul: "Pena Guru, Cahaya Bangsa",
+    judul: "Memulai Kebiasaan Journaling",
     deskripsi:
-      "Goresan yang Mengubah Arah Hidup Di balik setiap keberhasilan anak bangsa, ada peran guru yang [...]",
-    gambar: "https://i.pinimg.com/1200x/b8/d3/20/b8d320b824bae05298e03e66e7f1e41a.jpg",
+      "Mau cara super gampang buat ngilangin stres? Jawabannya: JOURNALING!",
+    gambar: "artikel/Capture.PNG",
   },
   {
     tanggal: "Agustus 25, 2025",
-    judul: "Pena Guru, Cahaya Bangsa",
+    judul: "Isi piringmu dengan gizi seimbang.",
     deskripsi:
-      "Goresan yang Mengubah Arah Hidup Di balik setiap keberhasilan anak bangsa, ada peran guru yang [...]",
-    gambar: "https://i.pinimg.com/736x/27/9e/ee/279eeeb94a52e9146a06e7cb32c06fc3.jpg",
+      "Ingat, hidup sehat itu enggak harus ribet, mulai dari hal kecil saja. Kuncinya ada pada konsistensi. Yuk, jaga diri dengan...",
+    gambar: "artikel/Capture2.PNG",
   },
   {
     tanggal: "Agustus 25, 2025",
-    judul: "Pena Guru, Cahaya Bangsa",
+    judul: "Afirmasi Positif Harian",
     deskripsi:
-      "Goresan yang Mengubah Arah Hidup Di balik setiap keberhasilan anak bangsa, ada peran guru yang [...]",
-    gambar: "https://i.pinimg.com/736x/a1/a3/b0/a1a3b09863e8ad92aa6aab6643d667a0.jpg",
+      "Hari ini aku memilih tenang. percaya diri, mampu, dan pantas untuk setiap kesempatan yang datang kepadaku. ",
+    gambar: "artikel/Capture3.PNG",
   },
   {
     tanggal: "Agustus 25, 2025",
-    judul: "Pena Guru, Cahaya Bangsa",
+    judul: "7 Softskills",
     deskripsi:
-      "Goresan yang Mengubah Arah Hidup Di balik setiap keberhasilan anak bangsa, ada peran guru yang [...]",
-    gambar: "https://i.pinimg.com/736x/8e/31/20/8e31206604cc29706c580022890d09b3.jpg",
+      "Kamu gak butuh motivasi, kamu butuh SISTEM! Temukan cara bikin habit jadi mudah, mengatasi hari buruk. ",
+    gambar: "artikel/Capture4.PNG",
   },
   {
     tanggal: "Agustus 25, 2025",
-    judul: "Pena Guru, Cahaya Bangsa",
+    judul: "5 Mitos Kesehatan",
     deskripsi:
-      "Goresan yang Mengubah Arah Hidup Di balik setiap keberhasilan anak bangsa, ada peran guru yang [...]",
-    gambar: "https://i.pinimg.com/736x/b9/77/04/b977045032820f7d5ab7e204db0b39aa.jpg",
+      "Nggak semua yang sering kamu dengar soal kesehatan itu benar, loh! Yuk geser sampai akhir biar nggak salah kaprah soal tubuhmu sendiri.",
+    gambar: "artikel/Capture5.PNG",
   },
   {
     tanggal: "Agustus 25, 2025",
-    judul: "Pena Guru, Cahaya Bangsa",
+    judul: "Tetap bersaing di 2025",
     deskripsi:
-      "Goresan yang Mengubah Arah Hidup Di balik setiap keberhasilan anak bangsa, ada peran guru yang [...]",
-    gambar: "https://i.pinimg.com/736x/37/69/71/3769719a5cb3bb49d41a6225d15b4084.jpg",
+      "Sekarang bukan lagi soal siapa yang paling pintar, tapi siapa yang mau terus belajar dan beradaptasi. ",
+    gambar: "artikel/Capture6.PNG",
   },
 ];
 
 export default function Artikel() {
   return (
-    <section className="py-12 px-4 md:px-10 bg-gray-50">
+    <section className="py-20 px-6 from-white to-secondary/10">
       <div className="max-w-7xl mx-auto">
         {/* Title */}
-        <h2 className="text-2xl font-bold text-center text-primary">
+        <h2 className="text-3xl sm:text-4xl font-bold text-center text-primary mb-2">
           Artikel Terbaru
         </h2>
-        <p className="text-gray-500 text-center mb-8">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa,
-          doloremque culpa itaque voluptatum eum repellat.
+        <p className="text-gray-600 text-center mb-12">
+          Insight baru seputar kesehatan mental untuk menemani perjalananmu.
         </p>
 
         {/* Grid */}
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-3 gap-8">
           {berita.map((item, i) => (
             <div
               key={i}
-              className="bg-white rounded-xl shadow-sm hover:shadow-md transition p-3"
+              className="bg-white rounded-2xl shadow-sm hover:shadow-xl hover:scale-[1.02] 
+              transition-all duration-300 p-4 border border-gray-100"
             >
+              {/* Image */}
               <img
                 src={item.gambar}
-                className="w-full h-40 object-cover rounded-lg"
+                className="w-full h-48 object-cover rounded-xl"
                 alt={item.judul}
               />
 
-              <p className="text-sm text-gray-400 mt-3">{item.tanggal}</p>
-              <h3 className="font-semibold text-gray-900 mt-1">{item.judul}</h3>
+              {/* Date */}
+              <p className="text-sm text-gray-400 mt-4">{item.tanggal}</p>
 
-              <p className="text-gray-600 text-sm mt-2">{item.deskripsi}</p>
+              {/* Title */}
+              <h3 className="font-semibold text-primary mt-2 text-lg leading-snug">
+                {item.judul}
+              </h3>
+
+              {/* Description */}
+              <p className="text-gray-600 text-sm mt-4 line-clamp-3">
+                {item.deskripsi}
+              </p>
+
+              {/* Read more */}
+              <button className="mt-4 text-primary font-medium text-sm hover:text-primary2">
+                Baca Selengkapnya →
+              </button>
             </div>
           ))}
         </div>
 
-        {/* Button */}
-        <div className="flex justify-center mt-10">
-          <button className="bg-primary text-white px-6 py-2 rounded-full font-medium hover:bg-green-700 transition flex items-center gap-2">
+        {/* Button - All Articles */}
+        <div className="flex justify-center mt-14">
+          <button
+            className="bg-primary text-white px-7 py-3 rounded-full font-semibold 
+          hover:bg-primary2 transition-all shadow-md flex items-center gap-2"
+          >
             Artikel Lainnya
             <span>➜</span>
           </button>
