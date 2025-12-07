@@ -29,7 +29,7 @@ export default function TentangKami() {
   ];
 
   return (
-    <div className="py-20 px-6 lg:px-28 bg-gradient-to-b from-white to-secondary/10">
+    <div className="py-20 px-6 lg:px-28 bg-gradient-to-b from-white to-primary/10">
       {/* TITLE */}
       <h2 className="text-4xl font-bold text-center text-primary mb-14">
         Program Kami

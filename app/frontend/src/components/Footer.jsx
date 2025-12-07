@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <footer className="bg-gradient-to-b from-secondary/10 to-secondary/20 text-black pt-16 pb-10 mt-20">
+    <footer className="bg-gradient-to-b from-white to-primary/20 text-black pt-16 pb-10 mt-20">
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
         {/* ===== LOGO & DESKRIPSI ===== */}
         <div>
