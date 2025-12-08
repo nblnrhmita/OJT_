@@ -203,7 +203,7 @@ export default function Mindscheck() {
 
         {localStorage.getItem("token") && (
           <a
-            href="/Riwayat"
+            href="/history"
             className="block mt-10 text-center text-emerald-600 hover:text-emerald-700"
           >
             Lihat Riwayat Asesmen
