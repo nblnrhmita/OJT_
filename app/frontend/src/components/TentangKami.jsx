@@ -9,10 +9,10 @@ export default function TentangKami() {
       link: "/mindscheck",
     },
     {
-      title: "Minds Talks",
-      desc: "Ruang berbagi cerita, berdiskusi, dan mendapatkan dukungan dari komunitas positif.",
+      title: "Bootcamp",
+      desc: "Program belajar terarah untuk meningkatkan kesehatan mental, mengelola emosi, dan memperkuat ketahanan diri melalui sesi intensif.",
       icon: "ri-megaphone-line",
-      link: "/minds-talks",
+      link: "/Bootcamp",
     },
     {
       title: "Donasi",

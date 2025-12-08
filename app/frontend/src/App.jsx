@@ -7,7 +7,6 @@ import Login from "./page/Login";
 import Register from "./page/Register";
 import Results from "./page/Results";
 import { ToastContainer } from "react-toastify";
-import History from "./page/History";
 
 function App() {
   return (
@@ -31,7 +30,7 @@ function App() {
         <Route path="/results" element={<Results />} />
         {/* auth */}
         <Route path="/login" element={<Login />} />
-        <Route path="/riwayat" element={<History />} />
+        <Route path="/register" element={<Register />} />
       </Routes>
     </>
   );
