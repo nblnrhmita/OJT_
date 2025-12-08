@@ -7,6 +7,7 @@ import Login from "./page/Login";
 import Register from "./page/Register";
 import Results from "./page/Results";
 import { ToastContainer } from "react-toastify";
+import Bootcamp from "./page/Bootcamp";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
         {/* auth */}
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/bootcamp" element={<Bootcamp />} />
       </Routes>
     </>
   );
