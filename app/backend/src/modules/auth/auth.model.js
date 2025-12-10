@@ -1,6 +1,7 @@
 import bcrypt from 'bcrypt';
 import { db } from '../../lib/db';
 
+
 // Cari user berdasarkan email
 export function findByEmail (email) {
   return new Promise((resolve, reject) => {

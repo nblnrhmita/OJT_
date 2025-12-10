@@ -96,7 +96,7 @@ export default function Footer() {
             </a>
 
             <a
-              href="#"
+              href="https://www.instagram.com/kami.mindsunited/"
               className="w-9 h-9 flex items-center justify-center rounded-full bg-primary/10 hover:bg-primary hover:text-white transition text-primary"
             >
               <i className="fa-brands fa-instagram"></i>

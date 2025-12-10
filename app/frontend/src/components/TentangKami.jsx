@@ -21,10 +21,10 @@ export default function TentangKami() {
       link: "https://l.instagram.com/?u=https%3A%2F%2Flynk.id%2Fmindsunited%3Futm_source%3Dig%26utm_medium%3Dsocial%26utm_content%3Dlink_in_bio%26fbclid%3DPAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGnvvEf64omenzkv6zbiF1yjx8HBMv4kGPwTLkFziyRikD8H4RnzjvnxbdQEsw_aem_paLf6VWen0I0OCLyzQErrA&e=AT1jl4LyHEyX8K1pQB-TvEK3KtnoxtWK_B-Tam6JlAJcc8Ks90T9LmeiLItNzzV3WNmySqNPzKEbmcHAtw0bE99fPhhc49pTiRLWLYwfHg",
     },
     {
-      title: "Brand Ambassador",
+      title: "Beasiswa",
       desc: "Mencari individu yang berkomitmen dalam edukasi kesehatan mental dan siap menjadi representatif MindsUnited.",
       icon: "ri-team-line",
-      link: "/brand-ambassador",
+      link: "/beasiswa",
     },
   ];
 
