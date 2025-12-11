@@ -211,6 +211,23 @@ export default function Mindscheck() {
         )}
       </div>
 
+      {/* ================= KLIK KE KONTAK PSIKOLOG ================= */}
+      <button
+        onClick={() => {
+            const token = localStorage.getItem("token");
+            if (token) {
+              checked && navigate("/kontakpsikolog");
+            } else {
+              toast.error("Harap login terlebih dahulu!");
+            }
+          }}
+        className="fixed bottom-6 right-6 bg-primary hover:bg-teal-500 text-white px-4 py-3 rounded-full shadow-xl flex items-center gap-2 transition z-50"
+      >
+        <Heart className="w-5 h-5" />
+        <span className="font-semibold text-sm">Butuh Bicara?</span>
+      </button>
+
+
       {/* ======================= FOOTER ======================= */}
       <Footer />
 

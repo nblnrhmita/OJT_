@@ -8,6 +8,7 @@ import Register from "./page/Register";
 import Results from "./page/Results";
 import { ToastContainer } from "react-toastify";
 import BeasiswaList from "./page/BeasiswaList";
+import KontakPsikolog from "./page/KontakPsikolog";
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/beasiswa" element={<BeasiswaList />} />
+        <Route path="/kontakpsikolog" element={<KontakPsikolog/>} />
       </Routes>
     </>
   );
