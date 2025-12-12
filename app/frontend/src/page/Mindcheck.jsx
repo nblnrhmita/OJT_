@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -6,26 +6,20 @@ import { toast } from "react-toastify";
 
 import {
   Brain,
-  Shield,
   Clock,
   BarChart3,
   FileText,
-  Heart,
-  AlertTriangle,
-  BookOpen,
-  ChevronRight,
 } from "lucide-react";
 
 export default function Mindscheck() {
-  const [selected, setSelected] = React.useState(null);
-  const [checked, setChecked] = React.useState(false);
   const navigate = useNavigate();
 
-  // Cek token dari localStorage
-  useEffect(() => {
-    const token = localStorage.getItem("token");
-    if (token) setChecked(true);
-  }, []);
+  // Cek token langsung dari initial state (menghindari ESLint warning)
+  const [checked, setChecked] = React.useState(() => {
+    return !!localStorage.getItem("token");
+  });
+
+  const [selected, setSelected] = React.useState(null);
 
   // Data Aspek
   const aspekList = [
@@ -51,7 +45,7 @@ export default function Mindscheck() {
     },
   };
 
-  // Feature Cards
+  // Feature cards
   const features = [
     {
       icon: Brain,
@@ -76,24 +70,36 @@ export default function Mindscheck() {
     },
   ];
 
+  // Start Assessment Handler
+  const handleStart = () => {
+    const token = localStorage.getItem("token");
+
+    if (!token) {
+      toast.error("Harap login terlebih dahulu!");
+      return;
+    }
+
+    if (!checked) return;
+
+    navigate("/Assesment");
+  };
+
   return (
     <div className="min-h-screen bg-white">
-      {/* ======================= NAVBAR ======================= */}
+      {/* NAVBAR */}
       <Navbar />
 
-      {/* ======================= HERO ======================= */}
+      {/* HERO SECTION */}
       <div className="text-center pt-20 max-w-4xl mx-auto px-4">
         <h1 className="text-4xl font-bold text-gray-800">
-          Kenali Kondisi <span className="text-primary">Kesehatan Mental</span>{" "}
-          Anda
+          Kenali Kondisi <span className="text-primary">Kesehatan Mental</span> Anda
         </h1>
         <p className="mt-4 text-gray-600">
-          Lakukan analisis mandiri melalui asesmen komprehensif untuk memahami
-          berbagai aspek kesejahteraan mental.
+          Lakukan analisis mandiri melalui asesmen komprehensif untuk memahami berbagai aspek kesejahteraan mental.
         </p>
       </div>
 
-      {/* ======================= FEATURE CARDS ======================= */}
+      {/* FEATURE CARDS */}
       <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-5 mt-14 px-4">
         {features.map((feature, index) => (
           <div
@@ -111,12 +117,10 @@ export default function Mindscheck() {
         ))}
       </div>
 
-      {/* ======================= ASPEK SECTION ======================= */}
+      {/* ASPEK SECTION */}
       <div className="w-full flex justify-center mt-20 px-4">
         <div className="bg-white shadow-xl rounded-3xl p-10 max-w-4xl w-full text-center">
-          <h2 className="text-2xl font-bold text-primary">
-            7 Aspek yang Dianalisis
-          </h2>
+          <h2 className="text-2xl font-bold text-primary">7 Aspek yang Dianalisis</h2>
           <p className="text-gray-500 mt-2 text-sm">
             Klik setiap aspek untuk melihat penjelasan lengkap
           </p>
@@ -135,7 +139,7 @@ export default function Mindscheck() {
         </div>
       </div>
 
-      {/* ======================= DISCLAIMER ======================= */}
+      {/* DISCLAIMER */}
       <div className="max-w-4xl mx-auto bg-amber-50 border border-amber-200 rounded-2xl p-8 mt-20 shadow-sm px-4">
         <h3 className="text-lg font-semibold text-gray-800 flex items-center gap-2 mb-4">
           <span className="text-amber-500 text-2xl">⚠️</span>
@@ -144,30 +148,19 @@ export default function Mindscheck() {
 
         <ul className="text-gray-700 text-sm space-y-2 ml-6 list-disc">
           <li>
-            Asesmen ini bersifat <span className="font-semibold">edukatif</span>{" "}
-            dan <span className="font-semibold">bukan diagnosis medis</span>.
+            Asesmen ini bersifat <span className="font-semibold">edukatif</span> dan <span className="font-semibold">bukan diagnosis medis</span>.
           </li>
-          <li>
-            Hasil tidak dapat menggantikan konsultasi profesional kesehatan
-            mental.
-          </li>
-          <li>
-            Jika Anda mengalami kondisi darurat, segera hubungi layanan
-            kesehatan profesional.
-          </li>
-          <li>
-            Jawaban Anda hanya diproses di perangkat dan tidak disimpan di
-            server.
-          </li>
+          <li>Hasil tidak dapat menggantikan konsultasi profesional kesehatan mental.</li>
+          <li>Jika Anda mengalami kondisi darurat, segera hubungi layanan kesehatan profesional.</li>
+          <li>Jawaban hanya diproses di perangkat dan tidak disimpan di server.</li>
         </ul>
       </div>
 
-      {/* ======================= START BUTTON ======================= */}
+      {/* START BUTTON */}
       <div className="max-w-3xl mx-auto bg-white rounded-3xl shadow-lg p-10 mt-10 text-center px-4">
         <h2 className="text-2xl font-bold text-primary mb-2">Siap Memulai?</h2>
         <p className="text-gray-600 mb-6">
-          Pastikan Anda berada di tempat yang nyaman dan memiliki waktu sekitar
-          10–15 menit untuk menyelesaikan asesmen ini.
+          Pastikan Anda berada di tempat yang nyaman dan memiliki waktu sekitar 10–15 menit.
         </p>
 
         <div className="bg-gray-50 rounded-xl p-5 flex items-start gap-3 text-left">
@@ -178,24 +171,14 @@ export default function Mindscheck() {
             className="h-5 w-5 text-emerald-600 focus:ring-emerald-500"
           />
           <p className="text-gray-700 text-sm">
-            Saya memahami bahwa asesmen ini bersifat edukatif, bukan diagnosis
-            medis.
+            Saya memahami bahwa asesmen ini bersifat edukatif, bukan diagnosis medis.
           </p>
         </div>
 
         <button
-          onClick={() => {
-            const token = localStorage.getItem("token");
-            if (token) {
-              checked && navigate("/Assesment");
-            } else {
-              toast.error("Harap login terlebih dahulu!");
-            }
-          }}
+          onClick={handleStart}
           className={`mt-8 px-8 py-3 rounded-xl text-white font-semibold shadow-md transition ${
-            checked
-              ? "bg-primary hover:bg-teal-500"
-              : "bg-gray-300 cursor-not-allowed"
+            checked ? "bg-primary hover:bg-teal-500" : "bg-gray-300 cursor-not-allowed"
           }`}
         >
           Mulai Asesmen
@@ -211,10 +194,10 @@ export default function Mindscheck() {
         )}
       </div>
 
-      {/* ======================= FOOTER ======================= */}
+      {/* FOOTER */}
       <Footer />
 
-      {/* ======================= POPUP ASPEK ======================= */}
+      {/* POPUP DETAIL ASPEK */}
       {selected && (
         <div className="fixed inset-0 bg-black bg-opacity-40 flex justify-center items-center z-50 p-4">
           <div className="bg-white rounded-2xl shadow-xl max-w-xl w-full p-8 relative overflow-y-auto max-h-[90vh]">
@@ -225,18 +208,12 @@ export default function Mindscheck() {
               ✕
             </button>
 
-            <h3 className="text-xl font-bold text-emerald-700 mb-3">
-              {selected}
-            </h3>
+            <h3 className="text-xl font-bold text-emerald-700 mb-3">{selected}</h3>
             <p className="text-gray-600 mb-4">{detailData[selected]?.desc}</p>
 
             <div className="bg-emerald-50 p-4 rounded-xl mb-4 text-left">
-              <h4 className="font-semibold text-emerald-700 mb-1">
-                Mengapa Aspek Ini Penting?
-              </h4>
-              <p className="text-gray-600 text-sm">
-                {detailData[selected]?.why}
-              </p>
+              <h4 className="font-semibold text-emerald-700 mb-1">Mengapa Aspek Ini Penting?</h4>
+              <p className="text-gray-600 text-sm">{detailData[selected]?.why}</p>
             </div>
 
             <h4 className="font-semibold text-gray-800 mb-2">Indikator:</h4>

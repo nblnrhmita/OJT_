@@ -298,7 +298,7 @@ export default function Home() {
 
 
       {/* ======================= CTA AKHIR ======================= */}
-      <section className="bg-gradient-to-br text-primary bg-primary py-24 px-6 text-white">
+      <section className="bg-gradient-to-br bg-primary py-24 px-6 text-white">
         <div className="max-w-4xl mx-auto text-center">
 
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
