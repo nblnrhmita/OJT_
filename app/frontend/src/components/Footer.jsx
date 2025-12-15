@@ -73,7 +73,7 @@ export default function Footer() {
           <h3 className="text-primary font-bold text-lg mb-4">Kontak</h3>
 
           <p className="text-sm text-gray-700 leading-6">
-            Jl. Contoh Alamat No. 123 Bandung, Jawa Barat
+            VOffice BYE, JL. Terusan Jakarta No.404, Sukamiskin, Kec. Arcamanik Kota Bandung, Jawa Barat 40291
           </p>
 
           <p className="mt-3 text-sm">

@@ -9,12 +9,12 @@ export default function HeroSection() {
     {
       title: "Minds Check",
       desc: "Kenali kondisi kesehatan mental Anda melalui asesmen komprehensif untuk memahami kesejahteraan emosional Anda.",
-      bg: "https://images.unsplash.com/photo-1517832207067-4db24a2ae47c?q=80&w=2070",
+      bg: "gambar3.jpeg",
     },
     {
       title: "Bersama Membangun Kesehatan Mental",
       desc: "Kami hadir sebagai ruang aman untuk berbagi, belajar, dan bertumbuh bersama menuju kehidupan yang lebih sehat.",
-      bg: "https://images.unsplash.com/photo-1517832207067-4db24a2ae47c?q=80&w=2070",
+      bg: "gambar2.jpeg",
     },
     {
       title: "Tempatmu Bertumbuh",
@@ -34,7 +34,7 @@ export default function HeroSection() {
         {slides.map((slide, index) => (
           <SwiperSlide key={index}>
             <div
-              className="relative h-[55vh] w-full flex items-center px-6 lg:px-20 
+              className="relative h-[60vh] w-full flex items-center px-6 lg:px-20 
               bg-cover bg-center bg-no-repeat"
               style={{ backgroundImage: `url('${slide.bg}')` }}
             >

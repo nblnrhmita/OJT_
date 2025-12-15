@@ -7,7 +7,7 @@ import Login from "./page/Login";
 import Register from "./page/Register";
 import Results from "./page/Results";
 import { ToastContainer } from "react-toastify";
-import BeasiswaList from "./page/BeasiswaList";
+import Beasiswa from "././page/Beasiswa";
 import KontakPsikolog from "./page/KontakPsikolog";
 
 function App() {
@@ -33,7 +33,7 @@ function App() {
         {/* auth */}
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/beasiswa" element={<BeasiswaList />} />
+        <Route path="/beasiswa" element={<Beasiswa />} />
         <Route path="/kontakpsikolog" element={<KontakPsikolog/>} />
       </Routes>
     </>

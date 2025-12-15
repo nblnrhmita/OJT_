@@ -32,18 +32,92 @@ export default function Mindscheck() {
     "Kepuasan Hidup",
   ];
 
-  const detailData = {
-    "Kesejahteraan Emosional": {
-      desc: "Kemampuan mengenali, memahami, dan mengelola emosi dengan sehat.",
-      why: "Kesejahteraan emosional adalah fondasi kesehatan mental...",
-      indikator: [
-        "Kemampuan mengenali berbagai emosi yang dirasakan",
-        "Cara mengekspresikan emosi secara sehat",
-        "Kemampuan regulasi emosi menghadapi situasi sulit",
-        "Tingkat penerimaan terhadap emosi negatif",
-      ],
-    },
-  };
+const detailData = {
+  "Kesejahteraan Emosional": {
+    desc: "Kemampuan individu dalam mengenali, memahami, dan mengelola emosi secara sehat dalam kehidupan sehari-hari.",
+    why:
+      "Kesejahteraan emosional merupakan fondasi utama kesehatan mental. Individu dengan kesejahteraan emosional yang baik mampu menghadapi tantangan hidup, menjaga keseimbangan perasaan, dan beradaptasi terhadap perubahan.",
+    indikator: [
+      "Menyadari dan mengenali emosi yang dirasakan",
+      "Mampu mengekspresikan emosi secara sehat",
+      "Mengelola emosi negatif dalam situasi sulit",
+      "Menerima emosi tanpa menyalahkan diri sendiri",
+    ],
+  },
+
+  "Tingkat Kecemasan": {
+    desc: "Tingkat perasaan khawatir, tegang, atau gelisah yang dirasakan dalam berbagai situasi.",
+    why:
+      "Kecemasan yang berlebihan dapat mengganggu konsentrasi, produktivitas, dan kualitas hidup. Memahami tingkat kecemasan membantu individu mengenali batas wajar dan mencari dukungan bila diperlukan.",
+    indikator: [
+      "Perasaan gelisah atau tegang berlebihan",
+      "Kesulitan mengendalikan rasa khawatir",
+      "Reaksi fisik seperti jantung berdebar atau sulit bernapas",
+      "Kesulitan fokus akibat rasa cemas",
+    ],
+  },
+
+  "Indikator Depresi": {
+    desc: "Tanda-tanda yang berkaitan dengan suasana hati rendah, kehilangan minat, dan energi yang menurun.",
+    why:
+      "Deteksi dini indikator depresi penting untuk mencegah dampak yang lebih serius terhadap fungsi sosial, akademik, maupun pekerjaan.",
+    indikator: [
+      "Perasaan sedih berkepanjangan",
+      "Kehilangan minat pada aktivitas yang biasanya disukai",
+      "Perasaan tidak berharga atau bersalah berlebihan",
+      "Perubahan pola tidur atau nafsu makan",
+    ],
+  },
+
+  "Manajemen Stres": {
+    desc: "Kemampuan individu dalam menghadapi tekanan dan tuntutan kehidupan secara adaptif.",
+    why:
+      "Manajemen stres yang baik membantu menjaga keseimbangan mental dan fisik, serta mencegah kelelahan emosional (burnout).",
+    indikator: [
+      "Kemampuan mengenali sumber stres",
+      "Menggunakan strategi coping yang sehat",
+      "Tidak mudah merasa kewalahan",
+      "Mampu menenangkan diri dalam situasi tertekan",
+    ],
+  },
+
+  "Koneksi Sosial": {
+    desc: "Kualitas hubungan sosial dan dukungan yang dimiliki individu dari lingkungan sekitarnya.",
+    why:
+      "Koneksi sosial yang sehat memberikan rasa memiliki, dukungan emosional, dan meningkatkan ketahanan mental.",
+    indikator: [
+      "Memiliki orang yang dapat dipercaya untuk berbagi",
+      "Merasa diterima dalam lingkungan sosial",
+      "Kemampuan menjalin dan mempertahankan hubungan",
+      "Tidak merasa kesepian secara berlebihan",
+    ],
+  },
+
+  "Harga Diri": {
+    desc: "Penilaian individu terhadap nilai dan kemampuan dirinya sendiri.",
+    why:
+      "Harga diri yang sehat berperan penting dalam pengambilan keputusan, kepercayaan diri, dan kesejahteraan psikologis.",
+    indikator: [
+      "Menerima kelebihan dan kekurangan diri",
+      "Percaya pada kemampuan pribadi",
+      "Tidak mudah membandingkan diri secara negatif",
+      "Berani mengekspresikan pendapat",
+    ],
+  },
+
+  "Kepuasan Hidup": {
+    desc: "Penilaian subjektif individu terhadap kualitas hidup secara keseluruhan.",
+    why:
+      "Kepuasan hidup mencerminkan keseimbangan antara harapan dan realitas, serta berkaitan erat dengan kebahagiaan dan kesehatan mental.",
+    indikator: [
+      "Merasa puas dengan kondisi hidup saat ini",
+      "Memiliki tujuan hidup yang jelas",
+      "Mampu mensyukuri pencapaian",
+      "Optimisme terhadap masa depan",
+    ],
+  },
+};
+
 
   // Feature cards
   const features = [
@@ -140,21 +214,37 @@ export default function Mindscheck() {
       </div>
 
       {/* DISCLAIMER */}
-      <div className="max-w-4xl mx-auto bg-amber-50 border border-amber-200 rounded-2xl p-8 mt-20 shadow-sm px-4">
-        <h3 className="text-lg font-semibold text-gray-800 flex items-center gap-2 mb-4">
-          <span className="text-amber-500 text-2xl">⚠️</span>
-          Penting untuk Diketahui
+      <div className="max-w-4xl mx-auto bg-amber-50 border border-amber-200 rounded-2xl shadow-sm 
+                      mt-14 md:mt-20 
+                      px-4 sm:px-6 md:px-8 
+                      py-5 sm:py-6 md:py-8">
+
+        <h3 className="text-base sm:text-lg font-semibold text-gray-800 
+                      flex items-start sm:items-center gap-2 mb-3 sm:mb-4">
+          <span className="text-amber-500 text-xl sm:text-2xl">⚠️</span>
+          <span>Penting untuk Diketahui</span>
         </h3>
 
-        <ul className="text-gray-700 text-sm space-y-2 ml-6 list-disc">
+        <ul className="text-gray-700 text-xs sm:text-sm 
+                      space-y-2 sm:space-y-3 
+                      ml-4 sm:ml-6 list-disc">
           <li>
-            Asesmen ini bersifat <span className="font-semibold">edukatif</span> dan <span className="font-semibold">bukan diagnosis medis</span>.
+            Asesmen ini bersifat <span className="font-semibold">edukatif</span> dan{" "}
+            <span className="font-semibold">bukan diagnosis medis</span>.
           </li>
-          <li>Hasil tidak dapat menggantikan konsultasi profesional kesehatan mental.</li>
-          <li>Jika Anda mengalami kondisi darurat, segera hubungi layanan kesehatan profesional.</li>
-          <li>Jawaban hanya diproses di perangkat dan tidak disimpan di server.</li>
+          <li>
+            Hasil tidak dapat menggantikan konsultasi profesional kesehatan mental.
+          </li>
+          <li>
+            Jika Anda mengalami kondisi darurat, segera hubungi layanan kesehatan profesional.
+          </li>
+          <li>
+            Jawaban hanya diproses di perangkat dan tidak disimpan di server.
+          </li>
         </ul>
+
       </div>
+
 
       {/* START BUTTON */}
       <div className="max-w-3xl mx-auto bg-white rounded-3xl shadow-lg p-10 mt-10 text-center px-4">
@@ -206,7 +296,6 @@ export default function Mindscheck() {
           }}
         className="fixed bottom-6 right-6 bg-primary hover:bg-teal-500 text-white px-4 py-3 rounded-full shadow-xl flex items-center gap-2 transition z-50"
       >
-        <Heart className="w-5 h-5" />
         <span className="font-semibold text-sm">Butuh Bicara?</span>
       </button>
 
