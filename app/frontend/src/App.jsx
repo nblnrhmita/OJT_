@@ -9,33 +9,39 @@ import Results from "./page/Results";
 import { ToastContainer } from "react-toastify";
 import Beasiswa from "././page/Beasiswa";
 import KontakPsikolog from "./page/KontakPsikolog";
+import Bootcamp from "./page/Bootcamp";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
     <>
-      <ToastContainer
-        position="top-right"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick={false}
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="light"
-      />
-      <Routes>
-        <Route path="/" element={<Index />} />
-        <Route path="/mindscheck" element={<Mindscheck />} />
-        <Route path="/assesment" element={<Assesment />} />
-        <Route path="/results" element={<Results />} />
-        {/* auth */}
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/beasiswa" element={<Beasiswa />} />
-        <Route path="/kontakpsikolog" element={<KontakPsikolog/>} />
-      </Routes>
+    <Route>
+          <ToastContainer
+            position="top-right"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick={false}
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="light"
+          />
+          <ScrollToTop />
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/mindscheck" element={<Mindscheck />} />
+            <Route path="/assesment" element={<Assesment />} />
+            <Route path="/results" element={<Results />} />
+            {/* auth */}
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/beasiswa" element={<Beasiswa />} />
+            <Route path="/kontakpsikolog" element={<KontakPsikolog/>} />
+            <Route path="/bootcamp" element={<Bootcamp/>} />
+          </Routes>
+        </Route>
     </>
   );
 }
