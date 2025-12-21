@@ -1,12 +1,13 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 import Mindscheck from "./page/Mindcheck";
 import Assesment from "./page/Assesment";
 import Index from "./page/Index";
 import Login from "./page/Login";
 import Register from "./page/Register";
 import Results from "./page/Results";
-import { ToastContainer } from "react-toastify";
+import AdminUsers from "./page/admin/User";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
         {/* auth */}
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/admin/users" element={<AdminUsers />} />
       </Routes>
     </>
   );

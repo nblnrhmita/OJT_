@@ -31,10 +31,17 @@ export default function Login() {
         if (response.data.data?.token)
           localStorage.setItem("token", response.data.data.token);
 
-        if (response.data.data?.user)
+        if (response.data.data?.user) {
           localStorage.setItem("user", JSON.stringify(response.data.data.user));
-
-        navigate("/");
+          
+          if (response.data.data.user.role === 'admin') {
+            navigate("/admin/users");
+          } else {
+            navigate("/");
+          }
+        } else {
+          navigate("/");
+        }
       } else {
         toast.error(response.data.message || "Login gagal");
       }

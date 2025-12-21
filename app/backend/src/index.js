@@ -12,13 +12,15 @@ app.use(express.json());
 dotenv.config();
 
 // Importing the auth router
-import { router as authRouter } from "./modules/auth/auth.route.js";
+import authRouter from "./modules/auth/auth.route.js";
+import userRouter from "./modules/user/user.route.js";
 
 app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
 app.use("/auth", authRouter);
+app.use("/users", userRouter);
 
 app.listen(port, () => {
   console.log(`Listening on  http://localhost:${port}`);

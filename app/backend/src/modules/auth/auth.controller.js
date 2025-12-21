@@ -9,7 +9,7 @@ import {
 // Registrasi user baru
 export async function register(req, res) {
   try {
-    const { username, email, password } = req.body;
+    const { username, email, password, role } = req.body;
 
     // Validasi input
     if (!username || !email || !password) {
@@ -36,6 +36,7 @@ export async function register(req, res) {
       username,
       email,
       password: hashedPassword,
+      role: role || 'user', // Default to 'user' if not provided
     };
 
     const newUser = await create(userData);
