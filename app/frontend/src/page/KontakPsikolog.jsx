@@ -7,37 +7,43 @@ const psychologists = [
     name: "Anna Deasyana, M.Psi.",
     role: "Psikolog klinis",
     status: "online",
-    img: "https://personale.id/wp-content/uploads/2024/07/2.-Raissa.webp"
+    img: "https://personale.id/wp-content/uploads/2024/07/2.-Raissa.webp",
+    link: "https://wa.me/081912850846"
   },
   {
     name: "Ida Bagus Jendra, M.Psi.",
     role: "Psikolog Klinis",
     status: "online",
-    img: "https://psychology.binus.ac.id/files/2023/10/IMG_2803-480x480.jpeg"
+    img: "https://psychology.binus.ac.id/files/2023/10/IMG_2803-480x480.jpeg",
+    link: "https://wa.me/081912850846"
   },
   {
     name: "Alfreda Fathya, S.Psi.",
     role: "Psikolog Umum",
     status: "online",
-    img: "https://personale.id/wp-content/uploads/2024/07/2.-Raissa.webp"
+    img: "https://personale.id/wp-content/uploads/2024/07/2.-Raissa.webp",
+    link: "https://wa.me/081912850846"
   },
   {
     name: "Dian Junita, M.Psi.",
     role: "Psikolog klinis",
     status: "both",
-    img: "https://personale.id/wp-content/uploads/2024/07/2.-Raissa.webp"
+    img: "https://personale.id/wp-content/uploads/2024/07/2.-Raissa.webp",
+    link: "https://wa.me/081912850846"
   },
   {
     name: "Zulfan Reza, M.Psi.",
     role: "Psikolog klinis",
     status: "online",
-    img: "https://psychology.binus.ac.id/files/2023/10/IMG_2803-480x480.jpeg"
+    img: "https://psychology.binus.ac.id/files/2023/10/IMG_2803-480x480.jpeg",
+    link: "https://wa.me/081912850846"
   },
   {
     name: "Lydia Augustina, M.Psi.",
     role: "Psikolog klinis",
     status: "both",
-    img: "https://personale.id/wp-content/uploads/2024/07/2.-Raissa.webp"
+    img: "https://personale.id/wp-content/uploads/2024/07/2.-Raissa.webp",
+    link: "https://wa.me/081912850846"
   }
 ];
 
@@ -89,15 +95,21 @@ export default function PsychologistGrid() {
 
               {/* Buttons */}
               {p.status === "online" && (
-                <button
+                <a
+                  href={p.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="
-                    bg-primary hover:bg-teal-500 text-white text-sm px-5 py-2 rounded-full
+                    inline-block
+                    bg-primary hover:bg-teal-500 text-white text-sm
+                    px-5 py-2 rounded-full
                     transition shadow-md backdrop-blur-md
                   "
                 >
                   Konsultasi Online
-                </button>
+                </a>
               )}
+
 
               {p.status === "both" && (
                 <div className="flex gap-3 justify-center">

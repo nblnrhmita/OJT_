@@ -11,11 +11,11 @@ import Beasiswa from "././page/Beasiswa";
 import KontakPsikolog from "./page/KontakPsikolog";
 import Bootcamp from "./page/Bootcamp";
 import ScrollToTop from "./components/ScrollToTop";
+import DaftarBeasiswa from "./page/DaftarBeasiswa";
 
 function App() {
   return (
     <>
-    <Route>
           <ToastContainer
             position="top-right"
             autoClose={5000}
@@ -40,8 +40,8 @@ function App() {
             <Route path="/beasiswa" element={<Beasiswa />} />
             <Route path="/kontakpsikolog" element={<KontakPsikolog/>} />
             <Route path="/bootcamp" element={<Bootcamp/>} />
+            <Route path="/daftar" element={<DaftarBeasiswa />} />
           </Routes>
-        </Route>
     </>
   );
 }
